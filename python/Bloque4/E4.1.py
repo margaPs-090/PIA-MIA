@@ -7,9 +7,22 @@ class CuentaBancaria:
         self.titular = titular
         self._saldo = saldo
 
+    
     @property
     def saldo(self):
-
+        return self._saldo
     
 
     def retirar(self, cantidad):
+        if cantidad > 0 and cantidad <= self._saldo:
+            self._saldo -= cantidad
+            print("Retirada realizada")
+        else:
+            print("Saldo insuficiente, no se puede realizar la operación")
+
+cuenta = CuentaBancaria("Marga", 100)
+print("Saldo inicial:", cuenta.saldo)
+cuenta.retirar(30)
+
+print("Titular:", cuenta.titular)
+print("Saldo:", cuenta.saldo)
