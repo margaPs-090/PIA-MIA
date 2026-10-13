@@ -11,7 +11,13 @@ class CuentaBancaria:
     @property
     def saldo(self):
         return self._saldo
-    
+
+     def ingresar(self, cantidad):
+        if cantidad > 0:
+            self._saldo += cantidad
+            print("Ingreso realizado")
+        else:
+            print("Error, cantidad incorrecta")
 
     def retirar(self, cantidad):
         if cantidad > 0 and cantidad <= self._saldo:
